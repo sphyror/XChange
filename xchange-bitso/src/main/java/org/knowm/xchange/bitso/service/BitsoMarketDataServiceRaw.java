@@ -43,7 +43,7 @@ public class BitsoMarketDataServiceRaw extends BitsoBaseService {
   }
 
   public BitsoTicker getBitsoTicker(CurrencyPair pair) throws IOException {
-    return bitso.getTicker(pair.base + "_" + pair.counter);
+    return bitso.getTicker(pair.base.getCurrencyCode().toLowerCase() + "_" + pair.counter.getCurrencyCode().toLowerCase());
   }
 
   public enum BitsoTime {
